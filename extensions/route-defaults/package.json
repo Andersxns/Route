@@ -1,0 +1,19 @@
+{
+	"name": "route-defaults",
+	"displayName": "Route Defaults",
+	"description": "Default settings that Route IDE ships with. Users can override any of them.",
+	"version": "1.0.0",
+	"publisher": "route",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"contributes": {
+		"configurationDefaults": {
+			"editor.minimap.enabled": false,
+			"editor.bracketPairColorization.enabled": false,
+			"workbench.settings.enableNaturalLanguageSearch": false,
+			"workbench.commandPalette.experimental.enableNaturalLanguageSearch": false
+		}
+	}
+}

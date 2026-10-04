@@ -1,0 +1,20 @@
+{
+	"name": "route-ide",
+	"private": true,
+	"type": "module",
+	"description": "Build scripts, patches and built-in extensions for Route IDE, a Code - OSS distribution",
+	"license": "MIT",
+	"engines": {
+		"node": ">=24"
+	},
+	"scripts": {
+		"sync": "node scripts/sync.mjs",
+		"apply": "node scripts/apply.mjs",
+		"build": "node scripts/build.mjs",
+		"icons": "node scripts/icons.mjs",
+		"check-theme": "node scripts/check-theme.mjs"
+	},
+	"devDependencies": {
+		"@resvg/resvg-js": "2.6.2"
+	}
+}

@@ -1,0 +1,11 @@
+# upstream checkout and build output (recreated by the scripts)
+/vscode/
+/VSCode-*/
+/dist/
+
+node_modules/
+/.cache/
+extensions/route-ai/dist/
+
+# local tool settings
+/.claude/

@@ -1,0 +1,160 @@
+{
+	"name": "route-ai",
+	"displayName": "Route AI",
+	"description": "Chat with Anthropic, OpenAI or any OpenAI-compatible model using your own API key.",
+	"version": "1.0.0",
+	"publisher": "route",
+	"license": "MIT",
+	"private": true,
+	"engines": {
+		"vscode": "^1.140.0"
+	},
+	"main": "./dist/extension.js",
+	"activationEvents": [],
+	"contributes": {
+		"viewsContainers": {
+			"secondarySidebar": [
+				{
+					"id": "route-ai",
+					"title": "Route AI",
+					"icon": "$(comment-discussion)"
+				}
+			]
+		},
+		"views": {
+			"route-ai": [
+				{
+					"type": "webview",
+					"id": "route.ai.chat",
+					"name": "Chat"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "route.ai.newChat",
+				"title": "New Chat",
+				"category": "Route AI",
+				"icon": "$(add)"
+			},
+			{
+				"command": "route.ai.selectModel",
+				"title": "Select Model",
+				"category": "Route AI",
+				"icon": "$(settings)"
+			},
+			{
+				"command": "route.ai.setApiKey",
+				"title": "Set API Key",
+				"category": "Route AI"
+			},
+			{
+				"command": "route.ai.clearApiKey",
+				"title": "Remove API Key",
+				"category": "Route AI"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "route.ai.newChat",
+					"when": "view == route.ai.chat",
+					"group": "navigation@1"
+				},
+				{
+					"command": "route.ai.selectModel",
+					"when": "view == route.ai.chat",
+					"group": "navigation@2"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "route.ai.chat.focus",
+				"key": "ctrl+alt+i",
+				"mac": "cmd+ctrl+i"
+			}
+		],
+		"configuration": {
+			"title": "Route AI",
+			"properties": {
+				"route.ai.provider": {
+					"type": "string",
+					"enum": [
+						"anthropic",
+						"openai",
+						"openai-compatible"
+					],
+					"enumDescriptions": [
+						"Anthropic Messages API",
+						"OpenAI Chat Completions API",
+						"Any server that implements the OpenAI Chat Completions API (Ollama, LM Studio, vLLM, OpenRouter, ...)"
+					],
+					"default": "anthropic",
+					"scope": "application",
+					"description": "Which API the chat panel talks to."
+				},
+				"route.ai.model": {
+					"type": "string",
+					"default": "",
+					"markdownDescription": "Model ID to use. Leave empty to use the provider's default (Anthropic: `claude-opus-5-5`). Use **Route AI: Select Model** to pick from the models your key can access."
+				},
+				"route.ai.baseUrl": {
+					"type": "string",
+					"default": "",
+					"scope": "application",
+					"markdownDescription": "Base URL of the server used by the `openai-compatible` provider, e.g. `http://localhost:11434/v1` for Ollama. Plain `http` is only allowed for localhost. This is a user setting only, so a workspace cannot redirect your API key to another server."
+				},
+				"route.ai.maxTokens": {
+					"type": "number",
+					"default": 16000,
+					"minimum": 256,
+					"description": "Maximum number of tokens in a single reply."
+				},
+				"route.ai.effort": {
+					"type": "string",
+					"enum": [
+						"",
+						"low",
+						"medium",
+						"high",
+						"xhigh",
+						"max"
+					],
+					"default": "",
+					"markdownDescription": "Anthropic only: how much the model should think before answering. Empty uses the model's default. Not every model accepts every level."
+				},
+				"route.ai.includeSelection": {
+					"type": "boolean",
+					"default": true,
+					"description": "Attach the active editor selection to each message."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"build": "node esbuild.mjs",
+		"watch": "node esbuild.mjs --watch",
+		"typecheck": "tsc --noEmit -p .",
+		"test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"test/**/*.test.mts\""
+	},
+	"files": [
+		"dist",
+		"media"
+	],
+	"dependencies": {
+		"@anthropic-ai/sdk": "0.131.0",
+		"markdown-it": "15.0.2",
+		"openai": "7.27.0"
+	},
+	"devDependencies": {
+		"@types/markdown-it": "14.2.0",
+		"@types/node": "24.19.1",
+		"@types/vscode": "1.140.0",
+		"esbuild": "0.28.2",
+		"typescript": "7.0.2"
+	},
+	"allowScripts": {
+		"esbuild": false
+	}
+}

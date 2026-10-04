@@ -1,0 +1,37 @@
+name: build
+
+# Started by hand from the Actions tab. It hasn't been run yet, so it isn't
+# triggered by tags or pushes.
+on:
+  workflow_dispatch:
+
+jobs:
+  windows-x64:
+    # Native modules need MSVC with the Spectre-mitigated libraries. If the
+    # runner image lacks them, scripts/build.mjs stops and says so.
+    runs-on: windows-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: git config --global core.longpaths true
+
+      - run: npm ci
+      - run: npm run sync
+      - run: npm run apply
+      - run: npm run build -- --installer
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: route-ide-win32-x64
+          path: |
+            VSCode-win32-x64/
+            dist/*.exe

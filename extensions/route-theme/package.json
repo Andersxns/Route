@@ -1,0 +1,27 @@
+{
+	"name": "route-theme",
+	"displayName": "Route Theme",
+	"description": "Route Dark, a black and white color theme.",
+	"version": "1.0.0",
+	"publisher": "route",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"id": "Route Dark",
+				"label": "Route Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/route-dark.json"
+			}
+		]
+	},
+	"files": [
+		"themes"
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"upstream": {
+		"repo": "https://github.com/microsoft/vscode.git",
+		"tag": "1.140.0",
+		"commit": "07f806f999227108933c2e30515b26eecc1fda74"
+	},
+	"company": "AndersXn Technology",
+	"url": "https://andersxn.com/route/",
+	"removeExtensions": {
+		"copilot": "built-in GitHub Copilot Chat; activates on every startup. Route IDE ships its own AI panel",
+		"github": "activates on every startup; GitHub publish/permalink features",
+		"microsoft-authentication": "Microsoft account sign-in; carries a native module",
+		"tunnel-forwarding": "port forwarding through Microsoft dev tunnels",
+		"grunt": "task detection for a legacy build tool",
+		"jake": "task detection for a legacy build tool"
+	},
+	"removeBuiltInExtensions": {
+		"ms-vscode.js-debug-companion": "only used when debugging a browser from a remote window",
+		"ms-vscode.vscode-js-profile-table": "table view for .cpuprofile files"
+	},
+	"electronLocales": ["en-US"]
+}

@@ -1,0 +1,19 @@
+diff --git a/build/npm/preinstall.ts b/build/npm/preinstall.ts
+index b0c2827e..87ffd77f 100644
+--- a/build/npm/preinstall.ts
++++ b/build/npm/preinstall.ts
+@@ -134,12 +134,12 @@ function installHeaders() {
+ 
+ 	if (local !== undefined) {
+ 		// Both disturl and target come from a file checked into our repository
+-		child_process.execFileSync(node_gyp, ['install', '--dist-url', local.disturl, local.target], { shell: true });
++		child_process.execFileSync(`"${node_gyp}"`, ['install', '--dist-url', local.disturl, local.target], { shell: true });
+ 	}
+ 
+ 	if (remote !== undefined) {
+ 		// Both disturl and target come from a file checked into our repository
+-		child_process.execFileSync(node_gyp, ['install', '--dist-url', remote.disturl, remote.target], { shell: true });
++		child_process.execFileSync(`"${node_gyp}"`, ['install', '--dist-url', remote.disturl, remote.target], { shell: true });
+ 	}
+ 
+ 	// Overlay any custom headers shipped in build/npm/gyp/custom-headers on top of

@@ -1,0 +1,88 @@
+{
+	"nameShort": "Route IDE",
+	"nameLong": "Route IDE",
+	"applicationName": "route-ide",
+	"dataFolderName": ".route-ide",
+	"sharedDataFolderName": ".route-ide-shared",
+	"urlProtocol": "route-ide",
+	"serverApplicationName": "route-ide-server",
+	"serverDataFolderName": ".route-ide-server",
+	"tunnelApplicationName": "route-ide-tunnel",
+	"win32MutexName": "routeide",
+	"win32DirName": "Route IDE",
+	"win32NameVersion": "Route IDE",
+	"win32RegValueName": "RouteIDE",
+	"win32x64AppId": "{{916EB4BF-1677-4621-A3C8-3EAEA0F42E5E}",
+	"win32arm64AppId": "{{1A2A9CA2-D80F-401C-9A25-2EA21E76312C}",
+	"win32x64UserAppId": "{{DF7EEB16-0FBE-4041-8DB8-18895E17E864}",
+	"win32arm64UserAppId": "{{B7115D06-570C-4786-B3F9-EEC1CCE3D3DB}",
+	"win32AppUserModelId": "RouteIDE.RouteIDE",
+	"win32ShellNameShort": "&Route IDE",
+	"win32TunnelServiceMutex": "routeide-tunnelservice",
+	"win32TunnelMutex": "routeide-tunnel",
+	"darwinBundleIdentifier": "com.andersxn.RouteIDE",
+	"darwinProfileUUID": "A5EA9D96-6784-425F-8C03-632BF39D2BF5",
+	"darwinProfilePayloadUUID": "5C6E8E88-C416-4409-AD6A-4158B3A1F7A9",
+	"linuxDesktopName": "com.andersxn.RouteIDE",
+	"linuxIconName": "route-ide",
+
+	"reportIssueUrl": "https://github.com/Andersxns/Route/issues/new",
+	"voiceWsUrl": null,
+	"trustedExtensionAuthAccess": null,
+	"builtInExtensionsEnabledWithAutoUpdates": [],
+
+	"extensionsGallery": {
+		"serviceUrl": "https://open-vsx.org/vscode/gallery",
+		"itemUrl": "https://open-vsx.org/vscode/item",
+		"controlUrl": "https://raw.githubusercontent.com/EclipseFdn/publish-extensions/refs/heads/master/extension-control/extensions.json"
+	},
+	"linkProtectionTrustedDomains": [
+		"https://open-vsx.org"
+	],
+	"extensionEnabledApiProposals": {
+		"ms-python.python": [
+			"codeActionAI",
+			"contribEditorContentMenu",
+			"quickPickSortByLabel",
+			"portsAttributes",
+			"testObserver",
+			"quickPickItemTooltip",
+			"terminalDataWriteEvent",
+			"terminalExecuteCommandEvent",
+			"notebookReplDocument",
+			"notebookVariableProvider",
+			"terminalShellEnv"
+		],
+		"ms-python.debugpy": [
+			"contribViewsWelcome",
+			"debugVisualization",
+			"portsAttributes"
+		],
+		"ms-toolsai.jupyter": [
+			"notebookDeprecated",
+			"notebookMessaging",
+			"notebookMime",
+			"portsAttributes",
+			"quickPickSortByLabel",
+			"notebookKernelSource",
+			"interactiveWindow",
+			"notebookControllerAffinityHidden",
+			"contribNotebookStaticPreloads",
+			"quickPickItemTooltip",
+			"notebookExecution",
+			"notebookCellExecution",
+			"notebookVariableProvider",
+			"notebookReplDocument"
+		],
+		"ms-toolsai.jupyter-renderers": [
+			"contribNotebookStaticPreloads"
+		]
+	},
+
+	"onboardingThemes": [
+		{ "id": "route-dark", "label": "Route Dark", "themeId": "Route Dark", "type": "dark" },
+		{ "id": "hc-dark", "label": "Dark High Contrast", "themeId": "Default High Contrast", "type": "hcDark" },
+		{ "id": "light-2026", "label": "Light 2026", "themeId": "Light 2026", "type": "light" },
+		{ "id": "hc-light", "label": "Light High Contrast", "themeId": "Default High Contrast Light", "type": "hcLight" }
+	]
+}
